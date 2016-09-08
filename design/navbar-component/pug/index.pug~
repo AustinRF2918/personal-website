@@ -1,0 +1,18 @@
+include ./component/head-boilerplate.pug
+include ./component/display-card.pug
+include ./component/formatted-intro.pug
+
+
+doctype html
+html
+  +headOne
+  body.spa-container.bg-p1l
+    .spa-centered-subcontainer
+      +formattedIntro("Austin Fell", "text-p5", '<strong class="text-p3">Front-end web developer</strong> at <u class=""><a class="text-p4" href=#">Blue Bike Web Design</a></u> and <strong class="text-p3"> student </strong> at <u class=""><a class="text-p4" href=#">University of Michigan-Dearborn</a></u>', "text-p4")
+      .card-array.spa-three-quarters
+        +displayCard('Web', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. ')
+        +displayCard('Cool Stuff', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. ')
+        +displayCard('Music', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. ')
+        +displayCard('Blog', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. ')
+
+

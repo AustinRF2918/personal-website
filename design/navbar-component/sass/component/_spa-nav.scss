@@ -1,0 +1,21 @@
+a.spa-nav {
+    // Typography
+    font-family: "Playfair Display", serif;
+    font-size: 24px;
+    width: 25%;
+    text-align: center;
+
+    // Colorization
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-decoration: none !important;
+    transition-duration: 0.8s;
+    text-align: center;
+
+    &:hover, &:active, &:selected {
+	color: black !important;
+	background: white !important;
+    }
+
+
+}

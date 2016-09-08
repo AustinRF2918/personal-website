@@ -1,0 +1,8 @@
+.spa-navigation {
+    position: fixed;
+    background: lighten(grey, 40%);
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    left: 10%;
+}

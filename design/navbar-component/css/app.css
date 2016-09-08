@@ -1,0 +1,39 @@
+.spa-navigation {
+  position: fixed;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 25%;
+  left: 37.5%;
+  transition-duration: 0.8s;
+  height: 50px; }
+  .spa-navigation a {
+    color: inherit; }
+  .spa-navigation:hover {
+    background: black;
+    height: 80px; }
+    .spa-navigation:hover * {
+      padding-top: 35px !important;
+      padding-bottom: 35px !important;
+      transition-duration: 0.8s;
+      color: white; }
+  .spa-navigation * {
+    color: black; }
+    .spa-navigation *:hover, .spa-navigation *:active, .spa-navigation *:selected {
+      color: black !important;
+      background: white !important; }
+
+a.spa-nav {
+  font-family: "Playfair Display", serif;
+  font-size: 24px;
+  width: 25%;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-decoration: none !important;
+  transition-duration: 0.8s;
+  text-align: center; }
+  a.spa-nav:hover, a.spa-nav:active, a.spa-nav:selected {
+    color: black !important;
+    background: white !important; }

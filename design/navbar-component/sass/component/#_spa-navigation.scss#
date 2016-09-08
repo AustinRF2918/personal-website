@@ -1,0 +1,33 @@
+.spa-navigation {
+    a {
+	color: inherit;
+    }
+
+    position: fixed;
+    background: lighten(grey, 50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 25%;
+    left: (100% - 25%) / 2;
+    transition-duration: 0.8s;
+    height: 50px;
+
+    &:hover {
+	background: black;
+	height: 80px;
+	* {
+	    padding-top: 35px !important;
+	    padding-bottom: 35px !important;
+	    transition-duration: 0.8s;
+	    color: white;
+	}
+    }
+
+    * {
+	color: black;
+	&:hover, &:active, &:selected {
+	}
+    }
+}
