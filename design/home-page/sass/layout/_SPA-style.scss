@@ -1,0 +1,30 @@
+// SPA-style functions as a way to set our various page
+// elements (specifically container) to be fit to a single
+// page on desktop devices. On mobile devices a different
+// approach is neccessary due to the fact that often things
+// wont fit onto a single page.
+
+.spa-container {
+    @media screen and (min-width: 768px) {
+	min-width: 100vw !important;
+	min-height: 100vh !important;
+    }
+
+    @media screen and (max-width: 767px) {
+	margin-top: 4rem;
+    }
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.spa-centered-subcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+

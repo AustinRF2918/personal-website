@@ -1,0 +1,4 @@
+mixin formattedIntro(header, headerStyle, subheader, subheaderStyle)
+  .title-description.spa-half
+    h1(class=['title-header', headerStyle])=header
+    h5(class=['title-subheader', subheaderStyle]) !{subheader}

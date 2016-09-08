@@ -1,0 +1,20 @@
+// This is something to contain little mini-cards that I have built
+// out for my person website: In essence it functions to display things
+// in line and to make sure that everything looks nice and tidy
+// in regards to the rest of the page.
+
+.card-array {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    @media screen and (min-width: 991px) {
+      width: 50%;
+    }
+
+    @media screen and (max-width: 990px) {
+      width: 75%;
+    }
+}
+

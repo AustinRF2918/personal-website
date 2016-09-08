@@ -1,0 +1,26 @@
+// This sheet contains various descriptions for actually formatting title
+// text where we used our SPA styles.
+
+.title-description {
+    @media screen and (min-width: 768px) {
+      width: 50%;
+    }
+
+    @media screen and (max-width: 767px) {
+      width: 95%;
+    }
+    text-align: center;
+}
+
+.title-header {
+    font-weight: 800;
+    letter-spacing: .05em;
+    font-size: 4rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.title-subheader {
+    margin-top: 1rem;
+    font-size: 1.75rem;
+    font-family: 'Raleway', sans-serif;
+}

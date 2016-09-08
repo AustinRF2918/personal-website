@@ -1,0 +1,46 @@
+// This is a mini-card for display portfolio items: It should really
+// have some icons in it to make it look really good.
+
+.display-card {
+    background: lighten(grey, 48%);
+    text-align: center;
+    margin: 1rem;
+    padding-top: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    transition-duration: .25s;
+    text-decoration: none;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
+    @media screen and (min-width: 768px) {
+      width: 33.333%;
+    }
+
+
+    &:link, &:visited, &:hover, &:active {
+	text-decoration: none;
+    }
+
+    &:hover {
+	h1, h2, h3, h4, h5 {
+          color: lighten($palette-5, 20%);
+	}
+	background: lighten(grey, 50%);
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    }
+
+    h1, h2, h3, h4, h5 {
+	transition-duration: .25s;
+	font-size: 1.8em;
+	letter-spacing: .07em;
+        font-family: 'Playfair Display', serif;
+        color: darken($palette-5, 5%);
+        font-weight: bold;
+    }
+
+    p {
+	color: black;
+	font-family: 'Raleway', sans-serif;
+    }
+}
+
