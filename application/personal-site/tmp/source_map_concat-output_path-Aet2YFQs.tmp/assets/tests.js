@@ -7,6 +7,24 @@ define('personal-site/tests/app.jshint', ['exports'], function (exports) {
     assert.ok(true, 'app.js should pass jshint.');
   });
 });
+define('personal-site/tests/components/display-card.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint | components/display-card.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'components/display-card.js should pass jshint.');
+  });
+});
+define('personal-site/tests/components/title-header.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint | components/title-header.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'components/title-header.js should pass jshint.');
+  });
+});
 define('personal-site/tests/helpers/destroy-app', ['exports', 'ember'], function (exports, _ember) {
   exports['default'] = destroyApp;
 
@@ -105,6 +123,304 @@ define('personal-site/tests/helpers/start-app.jshint', ['exports'], function (ex
     assert.ok(true, 'helpers/start-app.js should pass jshint.');
   });
 });
+define('personal-site/tests/integration/components/display-card-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+
+  (0, _emberQunit.moduleForComponent)('display-card', 'Integration | Component | display card', {
+    integration: true
+  });
+
+  (0, _emberQunit.test)('it renders', function (assert) {
+    // Set any properties with this.set('myProperty', 'value');
+    // Handle any actions with this.on('myAction', function(val) { ... });
+
+    this.render(Ember.HTMLBars.template((function () {
+      return {
+        meta: {
+          'revision': 'Ember@2.7.3',
+          'loc': {
+            'source': null,
+            'start': {
+              'line': 1,
+              'column': 0
+            },
+            'end': {
+              'line': 1,
+              'column': 16
+            }
+          }
+        },
+        isEmpty: false,
+        arity: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createComment('');
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var morphs = new Array(1);
+          morphs[0] = dom.createMorphAt(fragment, 0, 0, contextualElement);
+          dom.insertBoundary(fragment, 0);
+          dom.insertBoundary(fragment, null);
+          return morphs;
+        },
+        statements: [['content', 'display-card', ['loc', [null, [1, 0], [1, 16]]], 0, 0, 0, 0]],
+        locals: [],
+        templates: []
+      };
+    })()));
+
+    assert.equal(this.$().text().trim(), '');
+
+    // Template block usage:
+    this.render(Ember.HTMLBars.template((function () {
+      var child0 = (function () {
+        return {
+          meta: {
+            'revision': 'Ember@2.7.3',
+            'loc': {
+              'source': null,
+              'start': {
+                'line': 2,
+                'column': 4
+              },
+              'end': {
+                'line': 4,
+                'column': 4
+              }
+            }
+          },
+          isEmpty: false,
+          arity: 0,
+          cachedFragment: null,
+          hasRendered: false,
+          buildFragment: function buildFragment(dom) {
+            var el0 = dom.createDocumentFragment();
+            var el1 = dom.createTextNode('      template block text\n');
+            dom.appendChild(el0, el1);
+            return el0;
+          },
+          buildRenderNodes: function buildRenderNodes() {
+            return [];
+          },
+          statements: [],
+          locals: [],
+          templates: []
+        };
+      })();
+
+      return {
+        meta: {
+          'revision': 'Ember@2.7.3',
+          'loc': {
+            'source': null,
+            'start': {
+              'line': 1,
+              'column': 0
+            },
+            'end': {
+              'line': 5,
+              'column': 2
+            }
+          }
+        },
+        isEmpty: false,
+        arity: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode('\n');
+          dom.appendChild(el0, el1);
+          var el1 = dom.createComment('');
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode('  ');
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var morphs = new Array(1);
+          morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
+          return morphs;
+        },
+        statements: [['block', 'display-card', [], [], 0, null, ['loc', [null, [2, 4], [4, 21]]]]],
+        locals: [],
+        templates: [child0]
+      };
+    })()));
+
+    assert.equal(this.$().text().trim(), 'template block text');
+  });
+});
+define('personal-site/tests/integration/components/display-card-test.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint | integration/components/display-card-test.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'integration/components/display-card-test.js should pass jshint.');
+  });
+});
+define('personal-site/tests/integration/components/title-header-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+
+  (0, _emberQunit.moduleForComponent)('title-header', 'Integration | Component | title header', {
+    integration: true
+  });
+
+  (0, _emberQunit.test)('it renders', function (assert) {
+    // Set any properties with this.set('myProperty', 'value');
+    // Handle any actions with this.on('myAction', function(val) { ... });
+
+    this.render(Ember.HTMLBars.template((function () {
+      return {
+        meta: {
+          'revision': 'Ember@2.7.3',
+          'loc': {
+            'source': null,
+            'start': {
+              'line': 1,
+              'column': 0
+            },
+            'end': {
+              'line': 1,
+              'column': 16
+            }
+          }
+        },
+        isEmpty: false,
+        arity: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createComment('');
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var morphs = new Array(1);
+          morphs[0] = dom.createMorphAt(fragment, 0, 0, contextualElement);
+          dom.insertBoundary(fragment, 0);
+          dom.insertBoundary(fragment, null);
+          return morphs;
+        },
+        statements: [['content', 'title-header', ['loc', [null, [1, 0], [1, 16]]], 0, 0, 0, 0]],
+        locals: [],
+        templates: []
+      };
+    })()));
+
+    assert.equal(this.$().text().trim(), '');
+
+    // Template block usage:
+    this.render(Ember.HTMLBars.template((function () {
+      var child0 = (function () {
+        return {
+          meta: {
+            'revision': 'Ember@2.7.3',
+            'loc': {
+              'source': null,
+              'start': {
+                'line': 2,
+                'column': 4
+              },
+              'end': {
+                'line': 4,
+                'column': 4
+              }
+            }
+          },
+          isEmpty: false,
+          arity: 0,
+          cachedFragment: null,
+          hasRendered: false,
+          buildFragment: function buildFragment(dom) {
+            var el0 = dom.createDocumentFragment();
+            var el1 = dom.createTextNode('      template block text\n');
+            dom.appendChild(el0, el1);
+            return el0;
+          },
+          buildRenderNodes: function buildRenderNodes() {
+            return [];
+          },
+          statements: [],
+          locals: [],
+          templates: []
+        };
+      })();
+
+      return {
+        meta: {
+          'revision': 'Ember@2.7.3',
+          'loc': {
+            'source': null,
+            'start': {
+              'line': 1,
+              'column': 0
+            },
+            'end': {
+              'line': 5,
+              'column': 2
+            }
+          }
+        },
+        isEmpty: false,
+        arity: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode('\n');
+          dom.appendChild(el0, el1);
+          var el1 = dom.createComment('');
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode('  ');
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var morphs = new Array(1);
+          morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
+          return morphs;
+        },
+        statements: [['block', 'title-header', [], [], 0, null, ['loc', [null, [2, 4], [4, 21]]]]],
+        locals: [],
+        templates: [child0]
+      };
+    })()));
+
+    assert.equal(this.$().text().trim(), 'template block text');
+  });
+});
+define('personal-site/tests/integration/components/title-header-test.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint | integration/components/title-header-test.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'integration/components/title-header-test.js should pass jshint.');
+  });
+});
+define('personal-site/tests/models/display-card.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint | models/display-card.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'models/display-card.js should pass jshint.');
+  });
+});
+define('personal-site/tests/models/personal-overview.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint | models/personal-overview.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'models/personal-overview.js should pass jshint.');
+  });
+});
 define('personal-site/tests/resolver.jshint', ['exports'], function (exports) {
   'use strict';
 
@@ -179,6 +495,50 @@ define('personal-site/tests/test-helper.jshint', ['exports'], function (exports)
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'test-helper.js should pass jshint.');
+  });
+});
+define('personal-site/tests/unit/models/display-card-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+
+  (0, _emberQunit.moduleForModel)('display-card', 'Unit | Model | display card', {
+    // Specify the other units that are required for this test.
+    needs: []
+  });
+
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var model = this.subject();
+    // let store = this.store();
+    assert.ok(!!model);
+  });
+});
+define('personal-site/tests/unit/models/display-card-test.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint | unit/models/display-card-test.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/models/display-card-test.js should pass jshint.');
+  });
+});
+define('personal-site/tests/unit/models/personal-overview-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+
+  (0, _emberQunit.moduleForModel)('personal-overview', 'Unit | Model | personal overview', {
+    // Specify the other units that are required for this test.
+    needs: []
+  });
+
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var model = this.subject();
+    // let store = this.store();
+    assert.ok(!!model);
+  });
+});
+define('personal-site/tests/unit/models/personal-overview-test.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint | unit/models/personal-overview-test.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/models/personal-overview-test.js should pass jshint.');
   });
 });
 define('personal-site/tests/unit/routes/blog-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {

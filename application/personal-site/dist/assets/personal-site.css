@@ -164,6 +164,7 @@ body {
   .display-card:link, .display-card:visited, .display-card:hover, .display-card:active {
     text-decoration: none; }
   .display-card:hover {
+    cursor: pointer;
     background: white;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
     .display-card:hover h1, .display-card:hover h2, .display-card:hover h3, .display-card:hover h4, .display-card:hover h5 {
@@ -182,7 +183,8 @@ body {
 .title-description {
   text-align: center; }
   @media screen and (min-width: 768px) {
-    .title-description {
+      .title-description {
+      margin-left: 25%;
       width: 50%; } }
   @media screen and (max-width: 767px) {
     .title-description {

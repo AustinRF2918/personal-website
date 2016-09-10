@@ -1,0 +1,4 @@
+mixin formattedIntro(header, headerStyle, subheader, subheaderStyle)
+  .page-description
+    h1(class=['page-title-header', headerStyle])=header
+    h5(class=['page-title-subheader', subheaderStyle]) !{subheader}

@@ -1,0 +1,92 @@
+.text-p1 {
+  color: #F8B195; }
+
+.bg-p1 {
+  background: #F8B195; }
+
+.bg-p1l {
+  background: white; }
+
+.text-p1l {
+  color: #fbd4c5; }
+
+.text-p2 {
+  color: #F67280; }
+
+.bg-p2 {
+  background: #F67280; }
+
+.bg-p2l {
+  background: #f9a2ab; }
+
+.text-p2l {
+  color: #f9a2ab; }
+
+.text-p3 {
+  color: #C06C84; }
+
+.bg-p3 {
+  background: #C06C84; }
+
+.bg-p3l {
+  background: #cf90a2; }
+
+.text-p3l {
+  color: #cf90a2; }
+
+.text-p4 {
+  color: #6C5B7B; }
+
+.bg-p4 {
+  background: #6C5B7B; }
+
+.bg-p4l {
+  background: #867297; }
+
+.text-p4l {
+  color: #867297; }
+
+.text-p5 {
+  color: #355C7D; }
+
+.bg-p5 {
+  background: #355C7D; }
+
+.bg-p5l {
+  background: #4476a1; }
+
+.text-p5l {
+  color: #4476a1; }
+
+a {
+  text-decoration: none !important; }
+
+body {
+  background: #fdfdfd !important; }
+
+.page-description {
+  margin-top: 3rem;
+  text-align: center; }
+  @media screen and (min-width: 768px) {
+    .page-description {
+      margin-left: 25%;
+      width: 50%; } }
+  @media screen and (max-width: 767px) {
+    .page-description {
+      width: 95%;
+      margin-left: 2.5%; } }
+
+.page-title-header {
+  font-weight: 800;
+  letter-spacing: .05em;
+  font-family: 'Playfair Display', serif; }
+  @media screen and (min-width: 768px) {
+    .page-title-header {
+      font-size: 3rem; } }
+
+.page-title-subheader {
+  margin-top: 1rem;
+  font-family: 'Raleway', sans-serif; }
+  @media screen and (min-width: 768px) {
+    .page-title-subheader {
+      font-size: 1.5rem; } }
