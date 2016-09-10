@@ -1,4 +1,4 @@
-a.spa-nav {
+.spa-nav {
     // Typography
     font-family: "Playfair Display", serif;
     font-size: 24px;
@@ -12,9 +12,9 @@ a.spa-nav {
     transition-duration: 0.8s;
     text-align: center;
 
-    &:hover, &:active, &:selected {
-	color: black !important;
+    &:hover{
 	background: white !important;
+	color: black !important;
     }
 
 

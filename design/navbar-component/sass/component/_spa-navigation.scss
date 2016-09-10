@@ -3,25 +3,40 @@
 	color: inherit;
     }
 
+    .active {
+	font-weight: bold;
+    }
+
     position: fixed;
-    background: lighten(grey, 50%);
+    background: lighten(grey, 45%);
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    width: 25%;
-    left: (100% - 25%) / 2;
+    @media screen and (min-width: 981px){
+      width: 25%;
+      left: (100% - 25%) / 2;
+    }
+
+    @media screen and (max-width: 980px){
+	background: black;
+	color: white !important;
+	width: 100%;
+    }
+
     transition-duration: 0.8s;
     height: 50px;
 
     &:hover {
 	background: black;
-	height: 80px;
+	@media screen and (min-width: 981px){
+	  height: 80px;
 	* {
 	    padding-top: 35px !important;
 	    padding-bottom: 35px !important;
 	    transition-duration: 0.8s;
 	    color: white;
+	}
 	}
     }
 
