@@ -1,18 +1,9 @@
 <div class="spa-centered-subcontainer">
-      <div class="title-description spa-half">
-        <h1 class="title-header text-p5">Austin Fell</h1>
-        <img class="photo-header" src="assets/images/personal-photo.png">
-        <h5 class="title-subheader text-p4"><strong class="text-p3">Front-end web developer</strong> at <u class=""><a class="external-link text-p4" href="http://www.bluebikedesign.com">Blue Bike Web Design</a></u> and <strong class="text-p3"> student </strong> at <u class=""><a class="external-link text-p4" href="http://www.umdearborn.edu">University of Michigan-Dearborn</a></u></h5>
-      </div>
-      <div class="card-array spa-three-quarters"><a class="display-card" href="#">
-          <h3>Web</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. </p></a><a class="display-card" href="#">
-          <h3>Etc</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. </p></a><a class="display-card" href="#">
-          <h3>Music</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. </p></a><a class="display-card" href="#">
-          <h3>Blog</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. </p></a>
+     {{title-header attributes=model.personAttributes}} 
+     <div class="card-array spa-three-quarters">
+       {{#each model.displayCards as |card|}}
+         {{#display-card card.path title=card.title}}{{card.content}}{{/display-card}}
+       {{/each}}
       </div>
     </div>
 {{outlet}}
