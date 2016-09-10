@@ -3,3 +3,4 @@ mixin formattedIntro(header, headerStyle, subheader, subheaderStyle, iconStyle)
     i(class=['fa', iconStyle, "fa-5x", headerStyle] aria-hidden="true")
     h1(class=['page-title-header', headerStyle])=header
     h5(class=['page-title-subheader', subheaderStyle]) !{subheader}
+    hr.material-break
