@@ -272,3 +272,97 @@ body {
   @media screen and (min-width: 768px) {
     .page-title-subheader {
       font-size: 1.5rem; } }
+
+// Song Entry Stylization
+.song-entry * {
+    text-align: center;
+}
+
+.song-entry, h1 {
+    font-size: 1.5em;
+}
+
+* {
+    -webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+}
+.song-entry {
+  display: flex !important;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 2rem;
+  text-align: center; }
+  @media screen and (min-width: 991px) {
+    .song-entry {
+      margin-left: 25%;
+      width: 50%; } }
+  @media screen and (max-width: 990px) {
+    .song-entry {
+      width: 95%;
+      margin-left: 2.5%; } }
+  .song-entry .left-half, .song-entry .right-half {
+      padding: 2.5%; }
+    @media screen and (min-width: 768px) {
+      .song-entry .left-half, .song-entry .right-half {
+        width: 45%; } }
+    @media screen and (max-width: 767px) {
+      .song-entry .left-half, .song-entry .right-half {
+        width: 100%; } }
+  .song-entry hr {
+    width: 100%; }
+  .song-entry .song-entry-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    color: #C06C84;
+    transition-duration: .2s; }
+    .song-entry .song-entry-title:hover {
+      color: #ae4b67; }
+  .song-entry .song-entry-genre {
+    font-family: 'Raleway', sans-serif;
+    margin-top: .75rem;
+    margin-bottom: .5rem;
+    letter-spacing: .05em;
+    font-weight: 600;
+    color: #264259; }
+  .song-entry .song-entry-date {
+    font-weight: 500;
+    font-style: italic;
+    font-family: 'Raleway', sans-serif;
+    color: #355C7D; }
+  .song-entry .song-entry-box {
+    height: 250px;
+    transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    transition-duration: .45s;
+    overflow: hidden; }
+    .song-entry .song-entry-box:hover {
+      padding: 0px; }
+    .song-entry .song-entry-box:hover .song-entry-overlay {
+      opacity: 1; }
+  .song-entry .song-entry-overlay {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 0px;
+    text-align: center;
+    opacity: 0;
+    height: 100%;
+    transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    -webkit-transition: opacity 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    -moz-transition: opacity 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86); }
+  .song-entry .song-entry-icon {
+    position: relative;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 60px; }
+    .song-entry .song-entry-icon a {
+      transition-duration: .15s;
+      color: rgba(255, 255, 255, 0.5);
+      background: rgba(0, 0, 0, 0.5);
+      padding: 25px 30px 25px 35px;
+      border-radius: 50%; }
+      .song-entry .song-entry-icon a:hover {
+        color: white;
+        background: black; }
+  .song-entry .song-entry-soundcloud {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
