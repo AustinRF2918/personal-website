@@ -1,0 +1,182 @@
+.text-p1 {
+  color: #F8B195; }
+
+.bg-p1 {
+  background: #F8B195; }
+
+.bg-p1l {
+  background: white; }
+
+.text-p1l {
+  color: #fbd4c5; }
+
+.text-p2 {
+  color: #F67280; }
+
+.bg-p2 {
+  background: #F67280; }
+
+.bg-p2l {
+  background: #f9a2ab; }
+
+.text-p2l {
+  color: #f9a2ab; }
+
+.text-p3 {
+  color: #C06C84; }
+
+.bg-p3 {
+  background: #C06C84; }
+
+.bg-p3l {
+  background: #cf90a2; }
+
+.text-p3l {
+  color: #cf90a2; }
+
+.text-p4 {
+  color: #6C5B7B; }
+
+.bg-p4 {
+  background: #6C5B7B; }
+
+.bg-p4l {
+  background: #867297; }
+
+.text-p4l {
+  color: #867297; }
+
+.text-p5 {
+  color: #355C7D; }
+
+.bg-p5 {
+  background: #355C7D; }
+
+.bg-p5l {
+  background: #4476a1; }
+
+.text-p5l {
+  color: #4476a1; }
+
+a {
+  text-decoration: none !important; }
+
+body {
+  background: #fdfdfd !important; }
+
+.page-description {
+  margin-top: 3rem;
+  text-align: center; }
+  @media screen and (min-width: 768px) {
+    .page-description {
+      margin-left: 25%;
+      width: 50%; } }
+  @media screen and (max-width: 767px) {
+    .page-description {
+      width: 95%;
+      margin-left: 2.5%; } }
+
+.material-break {
+  height: 15px;
+  border: 0;
+  box-shadow: inset 0 8px 8px -8px rgba(0, 0, 0, 0.5);
+  margin-top: 2rem; }
+
+.page-title-header {
+  font-weight: 800;
+  letter-spacing: .04em;
+  font-family: 'Playfair Display', serif; }
+  @media screen and (min-width: 768px) {
+    .page-title-header {
+      font-size: 3rem; } }
+
+.page-title-subheader {
+  margin-top: 1rem;
+  font-family: 'Raleway', sans-serif; }
+  @media screen and (min-width: 768px) {
+    .page-title-subheader {
+      font-size: 1.5rem; } }
+
+.song-entry {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 2rem;
+  text-align: center; }
+  @media screen and (min-width: 991px) {
+    .song-entry {
+      margin-left: 25%;
+      width: 50%; } }
+  @media screen and (max-width: 990px) {
+    .song-entry {
+      width: 95%;
+      margin-left: 2.5%; } }
+  .song-entry .left-half, .song-entry .right-half {
+    padding: 20px; }
+    @media screen and (min-width: 768px) {
+      .song-entry .left-half, .song-entry .right-half {
+        width: 50%; } }
+    @media screen and (max-width: 767px) {
+      .song-entry .left-half, .song-entry .right-half {
+        width: 100%; } }
+  .song-entry hr {
+    width: 100%; }
+  .song-entry .music-entry-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    color: #C06C84;
+    transition-duration: .2s; }
+    .song-entry .music-entry-title:hover {
+      color: #ae4b67; }
+  .song-entry .music-entry-genre {
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: .05em;
+    font-weight: 600;
+    margin-top: .75rem;
+    color: #264259; }
+  .song-entry .music-entry-date {
+    font-style: italic;
+    font-family: 'Raleway', sans-serif;
+    color: #355C7D; }
+  .song-entry .music-entry-box {
+    height: 250px;
+    background-image: url(../img/boc1.jpg);
+    transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    transition-duration: .45s;
+    overflow: hidden; }
+    .song-entry .music-entry-box:hover {
+      padding: 0px; }
+    .song-entry .music-entry-box:hover .music-entry-overlay {
+      opacity: 1; }
+  .song-entry .music-entry-overlay {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 0px;
+    text-align: center;
+    opacity: 0;
+    height: 100%;
+    transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    -webkit-transition: opacity 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    -moz-transition: opacity 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86); }
+  .song-entry .music-entry-icon {
+    position: relative;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 60px; }
+    .song-entry .music-entry-icon a {
+      transition-duration: .15s;
+      color: rgba(255, 255, 255, 0.5);
+      background: rgba(0, 0, 0, 0.5);
+      padding: 25px 30px 25px 35px;
+      border-radius: 50%; }
+      .song-entry .music-entry-icon a:hover {
+        color: white;
+        background: black; }
+  .song-entry .music-entry-soundcloud {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
+
+svg {
+  fill: red !important;
+  stroke: red !important; }

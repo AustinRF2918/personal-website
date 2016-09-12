@@ -1,0 +1,130 @@
+.song-entry {
+
+    // Sizing across the various devices: Note
+    // that this is different from headers because
+    // the divided layout of the component: This
+    // looks HORRIBLE on tablets if we do 767/8,
+    // so it leaves me with no chose but to increase
+    // size.
+
+    @media screen and (min-width: 991px) {
+	margin-left: 25%;
+        width: 50%;
+    }
+
+    @media screen and (max-width: 990px) {
+      width: 95%;
+      margin-left: 2.5%;
+    }
+
+    // Make our things automatically wrap based on their size
+    // and fit to the parent container via flexbox.
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    margin-top: 2rem;
+    text-align: center;
+
+    // Bootstrap style column magic via this and flex: Note that
+    // this ties directly into the same philosophy as the media
+    // queries above as well.
+    .left-half, .right-half {
+	padding: 20px;
+        @media screen and (min-width: 768px) {
+	  width: 50%;
+	}
+
+        @media screen and (max-width: 767px) {
+	  width: 100%;
+	}
+    }
+
+    // Breaks always take up their own column.
+    hr {
+	width: 100%;
+    }
+
+    // Typography
+    .music-entry-title {
+	font-family: 'Playfair Display', serif;
+	font-weight: bold;
+	color: $palette-3;
+	transition-duration: .2s;
+
+	&:hover {
+	  color: darken($palette-3, 10%);
+	}
+    }
+
+    .music-entry-genre {
+      font-family: 'Raleway', sans-serif;
+      letter-spacing: .05em;
+      font-weight: 600;
+      margin-top: .75rem;
+      color: darken($palette-5, 10%);
+    }
+
+    .music-entry-date {
+      font-style: italic;
+      font-family: 'Raleway', sans-serif;
+      color: $palette-5;
+    }
+
+    .music-entry-box {
+	height: 250px;
+	background-image: url(../img/boc1.jpg);
+	transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+	transition-duration: .45s;
+	overflow: hidden;
+	&:hover {
+	    padding: 0px;
+	}
+	&:hover .music-entry-overlay {
+	    opacity: 1;
+	}
+    }
+
+    .music-entry-overlay {
+	display: flex;
+	align-items: center;
+	background: rgba(0, 0, 0, 0.2);
+	padding: 0px;
+	text-align: center;
+	opacity: 0;
+	height: 100%;
+	transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+	-webkit-transition: opacity .45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+	-moz-transition: opacity .45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    }
+
+    .music-entry-icon {
+	position: relative;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 60px;
+	a {
+	    transition-duration: .15s;
+	    color: rgba(255, 255, 255, 0.5);
+	    background: rgba(0, 0, 0, 0.5);
+	    padding: 25px 30px 25px 35px ;
+	    border-radius: 50%;
+
+	    &:hover {
+		color: rgba(255, 255, 255, 1);
+		background: rgba(0, 0, 0, 1);
+	    }
+	}
+    }
+
+    // Player stylization
+    .music-entry-soundcloud {
+      box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    }
+}
+
+svg {
+    fill: red !important;
+    stroke: red !important;
+}

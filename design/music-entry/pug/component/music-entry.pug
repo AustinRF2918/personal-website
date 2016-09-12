@@ -1,0 +1,14 @@
+mixin musicEntry(songName, songGenre, songDate)
+  .song-entry
+    .left-half
+      a(href="#", class="music-entry-title")
+        h3(class=['music-entry-title'])=songName
+      h4(class=['music-entry-genre'])=songGenre
+      h5(class=['music-entry-date'])=songDate
+    .right-half
+      .music-entry-box
+        div(class="music-entry-overlay" href="#")
+          span(class="music-entry-icon")
+            a(href="#")
+              i(class="fa fa-play" aria-hidden="true")
+    hr.material-break
