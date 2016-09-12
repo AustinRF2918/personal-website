@@ -1,11 +1,28 @@
-<div class="left-half"><a class="song-entry-title" href="#">
+{{#liquid-if isShowing class="showing-content"}}
+<div style="width: 100% !important;"class="left-half"><a class="song-entry-title" href="#">
+    <h3 class="song-entry-title">Boards Of Canada - Heard Through The Telegraph Lines (Austin's Telegraph Remix)</h3></a>
+    <h4 class="song-entry-genre">Downtempo/Chill</h4>
+    <h5 class="song-entry-date">February, 2015</h5>
+</div>
+<div class="arrow-container">
+  <a {{action "togglePlayer"}}><i class="fa fa-arrow-up fa-4x" artia-hidden="true"></i></a>
+</div>
+<div style="width: 100%;">
+{{soundcloud-player}}
+</div>
+{{/liquid-if}}
+{{#liquid-if isNotShowing class="hiding-content"}}
+<div class="flex-box">
+<div class="left-half "><a class="song-entry-title" href="#">
     <h3 class="song-entry-title">Boards Of Canada - Heard Through The Telegraph Lines (Austin's Telegraph Remix)</h3></a>
     <h4 class="song-entry-genre">Downtempo/Chill</h4>
     <h5 class="song-entry-date">February, 2015</h5>
 </div>
 <div class="right-half">
     <div style="background-image: url(assets/images/boc1.jpg)" class="song-entry-box">
-    <div class="song-entry-overlay" href="#"><span class="song-entry-icon"><a href="#"><i class="fa fa-play" aria-hidden="true"></i></a></span></div>
+    <div class="song-entry-overlay" href="#"><span class="song-entry-icon"><a {{action "togglePlayer"}} href="#"><i class="fa fa-play" aria-hidden="true"></i></a></span></div>
     </div>
 </div>
+</div>
+{{/liquid-if}}
 <hr class="material-break"/>
