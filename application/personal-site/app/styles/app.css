@@ -154,6 +154,7 @@ body {
   text-align: center;
   margin: 1rem;
   padding-top: 1rem;
+  padding-bottom: 1rem;
   padding-left: 2rem;
   padding-right: 2rem;
   transition-duration: .25s;
@@ -294,9 +295,12 @@ body {
 }
 
 .flex-box {
-    display: flex;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 }
 .left-half, .right-half {
+    flex: 1 0 0;
     margin: 0px !important;
 }
 .song-entry {
@@ -314,7 +318,7 @@ body {
       width: 95%;
       margin-left: 2.5%; } }
   .song-entry .left-half, .song-entry .right-half {
-      padding: 2.5%; }
+      padding-bottom: 2.5%; }
     @media screen and (min-width: 768px) {
       .song-entry .left-half, .song-entry .right-half {
         width: 45%; } }
@@ -343,7 +347,7 @@ body {
     font-family: 'Raleway', sans-serif;
     color: #355C7D; }
   .song-entry .song-entry-box {
-    height: 250px;
+    height: 450px;
     transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
     transition-duration: .45s;
     overflow: hidden; }

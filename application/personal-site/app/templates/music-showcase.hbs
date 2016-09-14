@@ -3,11 +3,10 @@
       <h5 class="page-title-subheader">Music that I have made or remixed: Nothing professional.</h5>
       <hr class="material-break"/>
 </div>
-{{#music-entry}}
-  {{soundcloud-player}}
-{{/music-entry}}
- 
-{{music-entry}}
-{{music-entry}}
-{{music-entry}}
 
+{{#each model as |entry|}}
+  {{#music-entry title=entry.title genre=entry.genre date=entry.date imgSource=entry.img ident=entry.ident}}
+  {{/music-entry}} 
+{{/each}}
+
+{{infinity-loader infinityModel=model}}

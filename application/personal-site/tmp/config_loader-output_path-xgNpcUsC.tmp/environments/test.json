@@ -1,0 +1,1 @@
+{"modulePrefix":"personal-site","environment":"test","rootURL":"/","locationType":"none","EmberENV":{"FEATURES":{}},"APP":{"LOG_ACTIVE_GENERATION":false,"LOG_VIEW_LOOKUPS":false,"rootElement":"#ember-testing","name":"personal-site","version":"0.0.0+e6ceef32"},"ember-cli-mirage":{"usingProxy":false,"useDefaultPassthroughs":true},"exportApplicationGlobal":true}

@@ -5,6 +5,10 @@ export default Ember.Component.extend({
     isShowing: false,
     isNotShowing: Ember.computed.not('isShowing'),
     tagType: 'div',
+    init() {
+	this._super();
+	console.log(this.get('imgSource'));
+    },
     actions: {
 	togglePlayer() {
 	    this.toggleProperty('isShowing');

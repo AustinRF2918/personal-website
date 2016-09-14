@@ -493,8 +493,8 @@ define("personal-site/templates/application", ["exports"], function (exports) {
             "column": 0
           },
           "end": {
-            "line": 18,
-            "column": 12
+            "line": 19,
+            "column": 36
           }
         },
         "moduleName": "personal-site/templates/application.hbs"
@@ -524,6 +524,11 @@ define("personal-site/templates/application", ["exports"], function (exports) {
         dom.appendChild(el0, el1);
         var el1 = dom.createComment("");
         dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createElement("div");
+        dom.setAttribute(el1, "style", "margin-top: 50px");
+        dom.appendChild(el0, el1);
         return el0;
       },
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
@@ -535,7 +540,6 @@ define("personal-site/templates/application", ["exports"], function (exports) {
         morphs[3] = dom.createMorphAt(element0, 4, 4);
         morphs[4] = dom.createMorphAt(element0, 5, 5);
         morphs[5] = dom.createMorphAt(fragment, 2, 2, contextualElement);
-        dom.insertBoundary(fragment, null);
         return morphs;
       },
       statements: [["block", "link-to", ["index"], ["class", "spa-nav"], 0, null, ["loc", [null, [2, 2], [4, 14]]]], ["block", "link-to", ["web-showcase"], ["class", "spa-nav"], 1, null, ["loc", [null, [5, 2], [7, 14]]]], ["block", "link-to", ["etc-showcase"], ["class", "spa-nav"], 2, null, ["loc", [null, [8, 2], [10, 14]]]], ["block", "link-to", ["music-showcase"], ["class", "spa-nav"], 3, null, ["loc", [null, [11, 2], [13, 14]]]], ["block", "link-to", ["blog"], ["class", "spa-nav"], 4, null, ["loc", [null, [14, 2], [16, 14]]]], ["content", "outlet", ["loc", [null, [18, 0], [18, 12]]], 0, 0, 0, 0]],
@@ -814,7 +818,7 @@ define("personal-site/templates/components/title-header", ["exports"], function 
             "column": 0
           },
           "end": {
-            "line": 7,
+            "line": 8,
             "column": 6
           }
         },
@@ -861,6 +865,11 @@ define("personal-site/templates/components/title-header", ["exports"], function 
         dom.appendChild(el2, el3);
         var el3 = dom.createComment("");
         dom.appendChild(el2, el3);
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n  ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createElement("hr");
+        dom.setAttribute(el2, "class", "material-break");
         dom.appendChild(el1, el2);
         var el2 = dom.createTextNode("\n");
         dom.appendChild(el1, el2);
