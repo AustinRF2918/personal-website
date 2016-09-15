@@ -78,7 +78,7 @@ body {
   transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
   transition-duration: .45s;
   overflow: hidden;
-  padding: 20px;
+  padding: 50px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
   @media screen and (min-width: 1200px) {
     .image-subcontainer {
@@ -97,7 +97,7 @@ body {
 .image-overlay {
   display: flex;
   align-items: center;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(53, 92, 126, 0.3);
   padding: 0px;
   text-align: center;
   opacity: 0;
@@ -107,15 +107,14 @@ body {
   -moz-transition: opacity 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86); }
 
 .image-icon {
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+  margin-left: 50%;
+  transform: translateX(-50%) scale(1);
   font-size: 60px;
   transition-duration: .15s; }
   .image-icon:hover {
     transform: translateX(-50%) scale(1.25); }
   .image-icon a {
-    transition-duration: .15s;
+    transition-duration: .55s;
     color: rgba(255, 255, 255, 0.5);
     background: rgba(0, 0, 0, 0.5);
     padding: 25px 30px 25px 35px; }
