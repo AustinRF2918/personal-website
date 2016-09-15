@@ -1,0 +1,85 @@
+$palette-1: #F8B195;
+$palette-2: #F67280;
+$palette-3: #C06C84;
+$palette-4: #6C5B7B;
+$palette-5: #355C7D;
+
+.text-p1 {
+    color: $palette-1;
+}
+
+.bg-p1 {
+    background: $palette-1;
+}
+
+.bg-p1l {
+    background: lighten($palette-1, 25%);
+}
+
+.text-p1l {
+    color: lighten($palette-1, 10%);
+}
+
+.text-p2 {
+    color: $palette-2;
+}
+
+.bg-p2 {
+    background: $palette-2;
+}
+
+.bg-p2l {
+    background: lighten($palette-2, 10%);
+}
+
+.text-p2l {
+    color: lighten($palette-2, 10%);
+}
+
+.text-p3 {
+    color: $palette-3;
+}
+
+.bg-p3 {
+    background: $palette-3;
+}
+
+.bg-p3l {
+    background: lighten($palette-3, 10%);
+}
+
+.text-p3l {
+    color: lighten($palette-3, 10%);
+}
+
+.text-p4 {
+    color: $palette-4;
+}
+
+.bg-p4 {
+    background: $palette-4;
+}
+
+.bg-p4l {
+    background: lighten($palette-4, 10%);
+}
+
+.text-p4l {
+    color: lighten($palette-4, 10%);
+}
+
+.text-p5 {
+    color: $palette-5;
+}
+
+.bg-p5 {
+    background: $palette-5;
+}
+
+.bg-p5l {
+    background: lighten($palette-5, 10%);
+}
+
+.text-p5l {
+    color: lighten($palette-5, 10%);
+}

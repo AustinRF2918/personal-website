@@ -1,0 +1,14 @@
+mixin webEntry(websiteName, websiteJob, websiteDate)
+  .web-entry
+    .centerable-half
+      a(href="#", class="web-entry-title")
+        h3(class=['web-entry-title'])=websiteName
+      .image-container
+        .image-subcontainer
+          .image-overlay
+            span(class="image-icon")
+              a(href="#")
+                i(class="fa fa-play" aria-hidden="true")
+      h5(class=['web-entry-genre'])=websiteJob
+      h5(class=['web-entry-date'])=websiteDate
+    hr.material-break

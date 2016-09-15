@@ -1,0 +1,61 @@
+.web-entry {
+
+    @media screen and (min-width: 768px) {
+	margin-left: 25%;
+        width: 50%;
+    }
+
+    @media screen and (max-width: 767px) {
+      width: 95%;
+      margin-left: 2.5%;
+    }
+
+    // Make our things automatically wrap based on their size
+    // and fit to the parent container via flexbox.
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    margin-top: 2rem;
+    text-align: center;
+
+    // Breaks always take up their own column.
+    hr {
+	width: 100%;
+    }
+
+    .centerable-half {
+	width: 100%;
+    }
+
+    // Typography
+    .web-entry-title {
+	font-family: 'Playfair Display', serif;
+	font-weight: bold;
+	color: $palette-3;
+	transition-duration: .2s;
+	letter-spacing: .05em;
+
+	@media screen and (min-width: 768px) {
+	  font-size: 1.5em;
+	}
+
+	&:hover {
+	  color: darken($palette-3, 10%);
+	}
+    }
+
+    .web-entry-genre {
+	font-family: 'Raleway', sans-serif;
+	letter-spacing: .05em;
+	font-weight: 600;
+	margin-top: .75rem;
+	color: darken($palette-5, 10%);
+    }
+
+    .web-entry-date {
+	font-style: italic;
+	font-family: 'Raleway', sans-serif;
+	color: $palette-5;
+    }
+}
