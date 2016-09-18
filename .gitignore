@@ -1,0 +1,9 @@
+/application/personal-site/tmp/*
+/application/personal-site/bower_components/*
+/application/personal-site/node_modules/*
+
+/design/home-page/node_modules
+/design/music-entry/node_modules
+/design/navbar-components/node_modules
+/design/page-header/node_modules
+/design/web-entry/node_modules
