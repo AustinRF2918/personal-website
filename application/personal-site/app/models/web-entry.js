@@ -5,5 +5,5 @@ export default DS.Model.extend({
     genre: DS.attr(),
     date: DS.attr(),
     img: DS.attr(),
-    ident: DS.attr()
+    ident: DS.attr(),
 });

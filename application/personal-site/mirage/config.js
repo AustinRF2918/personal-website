@@ -1,4 +1,4 @@
-let localEntries = [
+let musicEntries = [
     {
 	type: 'music-entries',
 	id: 0,
@@ -45,39 +45,53 @@ let localEntries = [
     }  
 ];
 
-
-
-let myData = {data: [{
-    type: 'music-entries',
-    id: 1,
-    attributes: {
-	ident: "239930490",
-	title: "Galantic - Peanut Butter Jelly (Austin's Bettye Extended Edit)",
-	genre: "House/Mashup",
-	date:  "December, 2015",
-	img: "https://i1.sndcdn.com/artworks-000141480885-rqxr4e-t500x500.jpg",
-    }
+let webEntries = [
+    {
+	type: 'web-entries',
+	id: 0,
+	attributes: {
+	    title: "Stonewater Subdivision",
+	    genre: "Home Assocation",
+	    date:  "August, 2016",
+	    img: "assets/images/boc1.jpg",
+	    ident: "210992419"
+	}
+    } , {
+	type: 'web-entries',
+	id: 1,
+	attributes: {
+	    title: "Juventis Spa",
+	    genre: "Medical Spa",
+	    date:  "June, 2016",
+	    img: "https://i1.sndcdn.com/artworks-000142636898-fd638b-t500x500.jpg",
+	    ident: "241311128"
+	}
     }, {
-    type: 'music-entries',
-    id: 2,
-    attributes: {
-	ident: "239930490",
-	title: "Galantic - Peanut Butter Jelly (Austin's Bettye Extended Edit)",
-	genre: "House/Mashup",
-	date:  "December, 2015",
-	img: "https://i1.sndcdn.com/artworks-000141480885-rqxr4e-t500x500.jpg",
-    }
+	type: 'web-entries',
+	id: 2,
+	attributes: {
+	    title: "Alarm Clock Buddy",
+	    genre: "Web Application",
+	    date:  "July, 2016",
+	    img: "https://i1.sndcdn.com/artworks-000141480885-rqxr4e-t500x500.jpg",
+	    ident: "239930490"
+	}
     }, {
-    type: 'music-entries',
-    id: 3,
-    attributes: {
-	ident: "239930490",
-	title: "Galantic - Peanut Butter Jelly (Austin's Bettye Extended Edit)",
-	genre: "House/Mashup",
-	date:  "December, 2015",
-	img: "https://i1.sndcdn.com/artworks-000141480885-rqxr4e-t500x500.jpg",
-    }
-}]};
+	type: 'web-entries',
+	id: 3,
+	attributes: {
+	    title: "Blue Bike Web Design",
+	    genre: "Business Website",
+	    date:  "May, 2016",
+	    img: "https://i1.sndcdn.com/artworks-000141480885-rqxr4e-t500x500.jpg",
+	    ident: "239930490"
+	}
+    }, {
+    }, {
+	
+    }  
+];
+
 
 export default function() {
   this.namespace = '/api';
@@ -88,19 +102,13 @@ export default function() {
 
 	let otherObjects = [];
 
-	console.log(myData.data[0]);
-	console.log(perPage);
-	console.log(page);
-
 	for (let i = 0; i < perPage; i++) {
 	    if (page === 1) {
-	      otherObjects.push(localEntries[Number(i + page - 1)]);
+	      otherObjects.push(musicEntries[Number(i + page - 1)]);
 	    } else {
-	      otherObjects.push(localEntries[Number(i + page)]);
+	      otherObjects.push(musicEntries[Number(i + page)]);
 	    }
 	}
-
-	console.log(otherObjects);
 
     return {
 	data: otherObjects,
@@ -109,7 +117,30 @@ export default function() {
 	}
     };
   });
-    
+
+     this.get('/web-entries', function(db, request) {
+	let qp = request.queryParams;
+	let perPage = Number(qp.per_page);
+	let page = Number(qp.page);
+
+	let otherObjects = [];
+
+	for (let i = 0; i < perPage; i++) {
+	    if (page === 1) {
+	      otherObjects.push(webEntries[Number(i + page - 1)]);
+	    } else {
+	      otherObjects.push(webEntries[Number(i + page)]);
+	    }
+	}
+
+    return {
+	data: otherObjects,
+	meta: {
+	    total_pages: 2
+	}
+    };
+  });
+  
   // These comments are here to help you get started. Feel free to delete them.
 
   /*

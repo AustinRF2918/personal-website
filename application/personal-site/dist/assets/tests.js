@@ -1045,6 +1045,15 @@ define('personal-site/tests/models/personal-overview.jshint', ['exports'], funct
     assert.ok(true, 'models/personal-overview.js should pass jshint.');
   });
 });
+define('personal-site/tests/models/web-entry.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint | models/web-entry.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'models/web-entry.js should pass jshint.');
+  });
+});
 define('personal-site/tests/resolver.jshint', ['exports'], function (exports) {
   'use strict';
 
@@ -1238,6 +1247,28 @@ define('personal-site/tests/unit/models/personal-overview-test.jshint', ['export
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'unit/models/personal-overview-test.js should pass jshint.');
+  });
+});
+define('personal-site/tests/unit/models/web-entry-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
+
+  (0, _emberQunit.moduleForModel)('web-entry', 'Unit | Model | web entry', {
+    // Specify the other units that are required for this test.
+    needs: []
+  });
+
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var model = this.subject();
+    // let store = this.store();
+    assert.ok(!!model);
+  });
+});
+define('personal-site/tests/unit/models/web-entry-test.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint | unit/models/web-entry-test.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/models/web-entry-test.js should pass jshint.');
   });
 });
 define('personal-site/tests/unit/routes/blog-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {

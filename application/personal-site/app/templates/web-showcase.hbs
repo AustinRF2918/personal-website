@@ -3,8 +3,18 @@
       <h5 class="page-title-subheader">Various websites that I have created and/or designed. Some of these are in conjunction with my workplace, Blue Bike Web Design, some are hobby or practice websites, and some have been made for school.</h5>
       <hr class="material-break"/>
 </div>
-{{web-entry}}
-{{web-entry}}
-{{web-entry}}
-{{web-entry}}
+
+{{#liquid-spacer class="cool-scroll" growWidth=false growDuration=550}}
+{{#each model as |entry|}}
+  {{#web-entry title=entry.title genre=entry.genre date=entry.date}}
+  {{/web-entry}} 
+{{/each}}
+{{/liquid-spacer}}
+
+{{#infinity-loader infinityModel=model destroyOnInfinity=true}}
+  <div class="arrow-container">
+    <i class="fa fa-arrow-down fa-1x" artia-hidden="true"></i>
+  </div>
+{{/infinity-loader}}
+
 

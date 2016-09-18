@@ -513,7 +513,7 @@ define("personal-site/instance-initializers/ember-data", ["exports", "ember-data
   };
 });
 define("personal-site/mirage/config", ["exports"], function (exports) {
-			var localEntries = [{
+			var musicEntries = [{
 						type: 'music-entries',
 						id: 0,
 						attributes: {
@@ -555,37 +555,47 @@ define("personal-site/mirage/config", ["exports"], function (exports) {
 						}
 			}, {}, {}];
 
-			var myData = { data: [{
-									type: 'music-entries',
-									id: 1,
-									attributes: {
-												ident: "239930490",
-												title: "Galantic - Peanut Butter Jelly (Austin's Bettye Extended Edit)",
-												genre: "House/Mashup",
-												date: "December, 2015",
-												img: "https://i1.sndcdn.com/artworks-000141480885-rqxr4e-t500x500.jpg"
-									}
-						}, {
-									type: 'music-entries',
-									id: 2,
-									attributes: {
-												ident: "239930490",
-												title: "Galantic - Peanut Butter Jelly (Austin's Bettye Extended Edit)",
-												genre: "House/Mashup",
-												date: "December, 2015",
-												img: "https://i1.sndcdn.com/artworks-000141480885-rqxr4e-t500x500.jpg"
-									}
-						}, {
-									type: 'music-entries',
-									id: 3,
-									attributes: {
-												ident: "239930490",
-												title: "Galantic - Peanut Butter Jelly (Austin's Bettye Extended Edit)",
-												genre: "House/Mashup",
-												date: "December, 2015",
-												img: "https://i1.sndcdn.com/artworks-000141480885-rqxr4e-t500x500.jpg"
-									}
-						}] };
+			var webEntries = [{
+						type: 'web-entries',
+						id: 0,
+						attributes: {
+									title: "Stonewater Subdivision",
+									genre: "Home Assocation",
+									date: "August, 2016",
+									img: "assets/images/boc1.jpg",
+									ident: "210992419"
+						}
+			}, {
+						type: 'web-entries',
+						id: 1,
+						attributes: {
+									title: "Juventis Spa",
+									genre: "Medical Spa",
+									date: "June, 2016",
+									img: "https://i1.sndcdn.com/artworks-000142636898-fd638b-t500x500.jpg",
+									ident: "241311128"
+						}
+			}, {
+						type: 'web-entries',
+						id: 2,
+						attributes: {
+									title: "Alarm Clock Buddy",
+									genre: "Web Application",
+									date: "July, 2016",
+									img: "https://i1.sndcdn.com/artworks-000141480885-rqxr4e-t500x500.jpg",
+									ident: "239930490"
+						}
+			}, {
+						type: 'web-entries',
+						id: 3,
+						attributes: {
+									title: "Blue Bike Web Design",
+									genre: "Business Website",
+									date: "May, 2016",
+									img: "https://i1.sndcdn.com/artworks-000141480885-rqxr4e-t500x500.jpg",
+									ident: "239930490"
+						}
+			}, {}, {}];
 
 			exports["default"] = function () {
 						this.namespace = '/api';
@@ -596,19 +606,36 @@ define("personal-site/mirage/config", ["exports"], function (exports) {
 
 									var otherObjects = [];
 
-									console.log(myData.data[0]);
-									console.log(perPage);
-									console.log(page);
-
 									for (var i = 0; i < perPage; i++) {
 												if (page === 1) {
-															otherObjects.push(localEntries[Number(i + page - 1)]);
+															otherObjects.push(musicEntries[Number(i + page - 1)]);
 												} else {
-															otherObjects.push(localEntries[Number(i + page)]);
+															otherObjects.push(musicEntries[Number(i + page)]);
 												}
 									}
 
-									console.log(otherObjects);
+									return {
+												data: otherObjects,
+												meta: {
+															total_pages: 2
+												}
+									};
+						});
+
+						this.get('/web-entries', function (db, request) {
+									var qp = request.queryParams;
+									var perPage = Number(qp.per_page);
+									var page = Number(qp.page);
+
+									var otherObjects = [];
+
+									for (var i = 0; i < perPage; i++) {
+												if (page === 1) {
+															otherObjects.push(webEntries[Number(i + page - 1)]);
+												} else {
+															otherObjects.push(webEntries[Number(i + page)]);
+												}
+									}
 
 									return {
 												data: otherObjects,
@@ -682,6 +709,15 @@ define('personal-site/models/personal-overview', ['exports', 'ember-data'], func
         workplace: _emberData['default'].attr(),
         education: _emberData['default'].attr(),
         school: _emberData['default'].attr()
+    });
+});
+define('personal-site/models/web-entry', ['exports', 'ember-data'], function (exports, _emberData) {
+    exports['default'] = _emberData['default'].Model.extend({
+        title: _emberData['default'].attr(),
+        genre: _emberData['default'].attr(),
+        date: _emberData['default'].attr(),
+        img: _emberData['default'].attr(),
+        ident: _emberData['default'].attr()
     });
 });
 define('personal-site/resolver', ['exports', 'ember-resolver'], function (exports, _emberResolver) {
@@ -760,8 +796,12 @@ define('personal-site/routes/music-showcase', ['exports', 'ember', 'ember-infini
         }
     });
 });
-define('personal-site/routes/web-showcase', ['exports', 'ember'], function (exports, _ember) {
-  exports['default'] = _ember['default'].Route.extend({});
+define('personal-site/routes/web-showcase', ['exports', 'ember', 'ember-infinity/mixins/route'], function (exports, _ember, _emberInfinityMixinsRoute) {
+    exports['default'] = _ember['default'].Route.extend(_emberInfinityMixinsRoute['default'], {
+        model: function model() {
+            return this.infinityModel('web-entry', { perPage: 2, startingPage: 1 });
+        }
+    });
 });
 define('personal-site/services/ajax', ['exports', 'ember-ajax/services/ajax'], function (exports, _emberAjaxServicesAjax) {
   Object.defineProperty(exports, 'default', {
@@ -2815,7 +2855,7 @@ define("personal-site/templates/components/web-entry", ["exports"], function (ex
         dom.appendChild(el3, el4);
         var el4 = dom.createElement("h3");
         dom.setAttribute(el4, "class", "web-entry-title");
-        var el5 = dom.createTextNode("Stonewater Subdivision");
+        var el5 = dom.createComment("");
         dom.appendChild(el4, el5);
         dom.appendChild(el3, el4);
         dom.appendChild(el2, el3);
@@ -2852,14 +2892,14 @@ define("personal-site/templates/components/web-entry", ["exports"], function (ex
         dom.appendChild(el2, el3);
         var el3 = dom.createElement("h5");
         dom.setAttribute(el3, "class", "web-entry-genre");
-        var el4 = dom.createTextNode("Homeowners Association");
+        var el4 = dom.createComment("");
         dom.appendChild(el3, el4);
         dom.appendChild(el2, el3);
         var el3 = dom.createTextNode("\n        ");
         dom.appendChild(el2, el3);
         var el3 = dom.createElement("h5");
         dom.setAttribute(el3, "class", "web-entry-date");
-        var el4 = dom.createTextNode("August, 2016");
+        var el4 = dom.createComment("");
         dom.appendChild(el3, el4);
         dom.appendChild(el2, el3);
         var el3 = dom.createTextNode("\n    ");
@@ -2877,10 +2917,15 @@ define("personal-site/templates/components/web-entry", ["exports"], function (ex
         dom.appendChild(el0, el1);
         return el0;
       },
-      buildRenderNodes: function buildRenderNodes() {
-        return [];
+      buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+        var element0 = dom.childAt(fragment, [0, 1]);
+        var morphs = new Array(3);
+        morphs[0] = dom.createMorphAt(dom.childAt(element0, [0, 1]), 0, 0);
+        morphs[1] = dom.createMorphAt(dom.childAt(element0, [4]), 0, 0);
+        morphs[2] = dom.createMorphAt(dom.childAt(element0, [6]), 0, 0);
+        return morphs;
       },
-      statements: [],
+      statements: [["content", "title", ["loc", [null, [3, 36], [3, 45]]], 0, 0, 0, 0], ["content", "genre", ["loc", [null, [9, 36], [9, 45]]], 0, 0, 0, 0], ["content", "date", ["loc", [null, [10, 35], [10, 43]]], 0, 0, 0, 0]],
       locals: [],
       templates: []
     };
@@ -3333,6 +3378,165 @@ define("personal-site/templates/music-showcase", ["exports"], function (exports)
 });
 define("personal-site/templates/web-showcase", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template((function () {
+    var child0 = (function () {
+      var child0 = (function () {
+        var child0 = (function () {
+          return {
+            meta: {
+              "revision": "Ember@2.7.3",
+              "loc": {
+                "source": null,
+                "start": {
+                  "line": 9,
+                  "column": 2
+                },
+                "end": {
+                  "line": 10,
+                  "column": 2
+                }
+              },
+              "moduleName": "personal-site/templates/web-showcase.hbs"
+            },
+            isEmpty: true,
+            arity: 0,
+            cachedFragment: null,
+            hasRendered: false,
+            buildFragment: function buildFragment(dom) {
+              var el0 = dom.createDocumentFragment();
+              return el0;
+            },
+            buildRenderNodes: function buildRenderNodes() {
+              return [];
+            },
+            statements: [],
+            locals: [],
+            templates: []
+          };
+        })();
+        return {
+          meta: {
+            "revision": "Ember@2.7.3",
+            "loc": {
+              "source": null,
+              "start": {
+                "line": 8,
+                "column": 0
+              },
+              "end": {
+                "line": 11,
+                "column": 0
+              }
+            },
+            "moduleName": "personal-site/templates/web-showcase.hbs"
+          },
+          isEmpty: false,
+          arity: 1,
+          cachedFragment: null,
+          hasRendered: false,
+          buildFragment: function buildFragment(dom) {
+            var el0 = dom.createDocumentFragment();
+            var el1 = dom.createComment("");
+            dom.appendChild(el0, el1);
+            return el0;
+          },
+          buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+            var morphs = new Array(1);
+            morphs[0] = dom.createMorphAt(fragment, 0, 0, contextualElement);
+            dom.insertBoundary(fragment, 0);
+            dom.insertBoundary(fragment, null);
+            return morphs;
+          },
+          statements: [["block", "web-entry", [], ["title", ["subexpr", "@mut", [["get", "entry.title", ["loc", [null, [9, 21], [9, 32]]], 0, 0, 0, 0]], [], [], 0, 0], "genre", ["subexpr", "@mut", [["get", "entry.genre", ["loc", [null, [9, 39], [9, 50]]], 0, 0, 0, 0]], [], [], 0, 0], "date", ["subexpr", "@mut", [["get", "entry.date", ["loc", [null, [9, 56], [9, 66]]], 0, 0, 0, 0]], [], [], 0, 0]], 0, null, ["loc", [null, [9, 2], [10, 16]]]]],
+          locals: ["entry"],
+          templates: [child0]
+        };
+      })();
+      return {
+        meta: {
+          "revision": "Ember@2.7.3",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 7,
+              "column": 0
+            },
+            "end": {
+              "line": 12,
+              "column": 0
+            }
+          },
+          "moduleName": "personal-site/templates/web-showcase.hbs"
+        },
+        isEmpty: false,
+        arity: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createComment("");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+          var morphs = new Array(1);
+          morphs[0] = dom.createMorphAt(fragment, 0, 0, contextualElement);
+          dom.insertBoundary(fragment, 0);
+          dom.insertBoundary(fragment, null);
+          return morphs;
+        },
+        statements: [["block", "each", [["get", "model", ["loc", [null, [8, 8], [8, 13]]], 0, 0, 0, 0]], [], 0, null, ["loc", [null, [8, 0], [11, 9]]]]],
+        locals: [],
+        templates: [child0]
+      };
+    })();
+    var child1 = (function () {
+      return {
+        meta: {
+          "revision": "Ember@2.7.3",
+          "loc": {
+            "source": null,
+            "start": {
+              "line": 14,
+              "column": 0
+            },
+            "end": {
+              "line": 18,
+              "column": 0
+            }
+          },
+          "moduleName": "personal-site/templates/web-showcase.hbs"
+        },
+        isEmpty: false,
+        arity: 0,
+        cachedFragment: null,
+        hasRendered: false,
+        buildFragment: function buildFragment(dom) {
+          var el0 = dom.createDocumentFragment();
+          var el1 = dom.createTextNode("  ");
+          dom.appendChild(el0, el1);
+          var el1 = dom.createElement("div");
+          dom.setAttribute(el1, "class", "arrow-container");
+          var el2 = dom.createTextNode("\n    ");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createElement("i");
+          dom.setAttribute(el2, "class", "fa fa-arrow-down fa-1x");
+          dom.setAttribute(el2, "artia-hidden", "true");
+          dom.appendChild(el1, el2);
+          var el2 = dom.createTextNode("\n  ");
+          dom.appendChild(el1, el2);
+          dom.appendChild(el0, el1);
+          var el1 = dom.createTextNode("\n");
+          dom.appendChild(el0, el1);
+          return el0;
+        },
+        buildRenderNodes: function buildRenderNodes() {
+          return [];
+        },
+        statements: [],
+        locals: [],
+        templates: []
+      };
+    })();
     return {
       meta: {
         "revision": "Ember@2.7.3",
@@ -3343,7 +3547,7 @@ define("personal-site/templates/web-showcase", ["exports"], function (exports) {
             "column": 0
           },
           "end": {
-            "line": 11,
+            "line": 21,
             "column": 0
           }
         },
@@ -3383,15 +3587,7 @@ define("personal-site/templates/web-showcase", ["exports"], function (exports) {
         var el2 = dom.createTextNode("\n");
         dom.appendChild(el1, el2);
         dom.appendChild(el0, el1);
-        var el1 = dom.createTextNode("\n");
-        dom.appendChild(el0, el1);
-        var el1 = dom.createComment("");
-        dom.appendChild(el0, el1);
-        var el1 = dom.createTextNode("\n");
-        dom.appendChild(el0, el1);
-        var el1 = dom.createComment("");
-        dom.appendChild(el0, el1);
-        var el1 = dom.createTextNode("\n");
+        var el1 = dom.createTextNode("\n\n");
         dom.appendChild(el0, el1);
         var el1 = dom.createComment("");
         dom.appendChild(el0, el1);
@@ -3404,16 +3600,14 @@ define("personal-site/templates/web-showcase", ["exports"], function (exports) {
         return el0;
       },
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-        var morphs = new Array(4);
+        var morphs = new Array(2);
         morphs[0] = dom.createMorphAt(fragment, 2, 2, contextualElement);
         morphs[1] = dom.createMorphAt(fragment, 4, 4, contextualElement);
-        morphs[2] = dom.createMorphAt(fragment, 6, 6, contextualElement);
-        morphs[3] = dom.createMorphAt(fragment, 8, 8, contextualElement);
         return morphs;
       },
-      statements: [["content", "web-entry", ["loc", [null, [6, 0], [6, 13]]], 0, 0, 0, 0], ["content", "web-entry", ["loc", [null, [7, 0], [7, 13]]], 0, 0, 0, 0], ["content", "web-entry", ["loc", [null, [8, 0], [8, 13]]], 0, 0, 0, 0], ["content", "web-entry", ["loc", [null, [9, 0], [9, 13]]], 0, 0, 0, 0]],
+      statements: [["block", "liquid-spacer", [], ["class", "cool-scroll", "growWidth", false, "growDuration", 550], 0, null, ["loc", [null, [7, 0], [12, 18]]]], ["block", "infinity-loader", [], ["infinityModel", ["subexpr", "@mut", [["get", "model", ["loc", [null, [14, 33], [14, 38]]], 0, 0, 0, 0]], [], [], 0, 0], "destroyOnInfinity", true], 1, null, ["loc", [null, [14, 0], [18, 20]]]]],
       locals: [],
-      templates: []
+      templates: [child0, child1]
     };
   })());
 });
@@ -3590,7 +3784,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("personal-site/app")["default"].create({"name":"personal-site","version":"0.0.0+8212719c"});
+  require("personal-site/app")["default"].create({"name":"personal-site","version":"0.0.0+57d3debf"});
 }
 
 /* jshint ignore:end */
