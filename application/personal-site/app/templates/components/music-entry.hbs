@@ -8,7 +8,11 @@
     <a {{action "togglePlayer"}}><i class="fa fa-arrow-up fa-4x" artia-hidden="true"></i></a>
   </div>
   <div style="width: 100%;">
-    {{soundcloud-player height="250" width="100%" trackID=this.ident}}
+    {{#liquid-spacer}}
+        {{#liquid-if playerIsShowing class="soundcloud-player-widget"}}
+            {{soundcloud-player height="250" width="100%" trackID=this.ident}}
+        {{/liquid-if}}
+    {{/liquid-spacer}}
   </div>
 {{/liquid-if}}
 

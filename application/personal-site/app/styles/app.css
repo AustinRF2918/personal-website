@@ -294,15 +294,18 @@ body {
     width: 100%;
 }
 
-.flex-box {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+@media screen and (min-width: 768px) {
+    .flex-box {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    }
 }
 .left-half, .right-half {
     flex: 1 0 0;
     margin: 0px !important;
 }
+
 .song-entry {
   display: flex !important;
   flex-wrap: wrap;
@@ -410,3 +413,141 @@ body {
     background: white;
     color: black;
 }
+
+.fa-arrow-down {
+    margin-top: 10px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%); }
+
+.image-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center; }
+
+.image-subcontainer {
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+  background-image: url(../assets/images/stonewater1.jpg);
+  background-size: cover;
+  transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition-duration: .45s;
+  overflow: hidden;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
+  @media screen and (min-width: 768px) {
+    .image-subcontainer {
+      width: 350px;
+      height: 350px; } }
+  @media screen and (max-width: 767px) {
+    .image-subcontainer {
+      width: 100%;
+      height: 350px; } }
+  .image-subcontainer:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    }
+  .image-subcontainer:hover .image-overlay {
+    opacity: 1; }
+
+.image-overlay {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  background: rgba(53, 92, 126, 0.3);
+  padding: 0px;
+  text-align: center;
+  opacity: 0;
+  height: 100%;
+  transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  -webkit-transition: opacity 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  -moz-transition: opacity 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86); }
+
+.image-icon {
+  margin-left: 50%;
+  transform: translateX(-50%) scale(1);
+  font-size: 60px;
+  transition-duration: .15s; }
+  .image-icon:hover {
+    transform: translateX(-50%) scale(1.25); }
+  .image-icon a {
+    transition-duration: .55s;
+    color: rgba(255, 255, 255, 0.5);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 25px 30px 25px 35px; }
+    .image-icon a:hover {
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+      color: white;
+      background: black; }
+
+.page-description {
+  margin-top: 3rem;
+  text-align: center; }
+  @media screen and (min-width: 768px) {
+    .page-description {
+      margin-left: 25%;
+      width: 50%; } }
+  @media screen and (max-width: 767px) {
+    .page-description {
+      width: 95%;
+      margin-left: 2.5%; } }
+
+.material-break {
+  height: 15px;
+  border: 0;
+  box-shadow: inset 0 8px 8px -8px rgba(0, 0, 0, 0.5);
+  margin-top: 2rem; }
+
+.page-title-header {
+  font-weight: 800;
+  letter-spacing: .04em;
+  font-family: 'Playfair Display', serif; }
+  @media screen and (min-width: 768px) {
+    .page-title-header {
+      font-size: 3rem; } }
+
+.page-title-subheader {
+  margin-top: 1rem;
+  font-family: 'Raleway', sans-serif; }
+  @media screen and (min-width: 768px) {
+    .page-title-subheader {
+      font-size: 1.5rem; } }
+
+.web-entry {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 2rem;
+  text-align: center; }
+  @media screen and (min-width: 768px) {
+    .web-entry {
+      margin-left: 25%;
+      width: 50%; } }
+  @media screen and (max-width: 767px) {
+    .web-entry {
+      width: 95%;
+      margin-left: 2.5%; } }
+  .web-entry hr {
+    width: 100%; }
+  .web-entry .centerable-half {
+    width: 100%; }
+  .web-entry .web-entry-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    color: #C06C84;
+    transition-duration: .2s;
+    letter-spacing: .05em; }
+    @media screen and (min-width: 768px) {
+      .web-entry .web-entry-title {
+        font-size: 1.5em; } }
+    .web-entry .web-entry-title:hover {
+      color: #ae4b67; }
+  .web-entry .web-entry-genre {
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: .05em;
+    font-weight: 600;
+    margin-top: .75rem;
+    color: #264259; }
+  .web-entry .web-entry-date {
+    font-style: italic;
+    font-family: 'Raleway', sans-serif;
+    color: #355C7D; }

@@ -4,9 +4,15 @@
       <hr class="material-break"/>
 </div>
 
+{{#liquid-spacer class="cool-scroll" growWidth=false growDuration=550}}
 {{#each model as |entry|}}
-  {{#music-entry title=entry.title genre=entry.genre date=entry.date imgSource=entry.img ident=entry.ident}}
+  {{#music-entry activeReference=currentToggledTrack title=entry.title genre=entry.genre date=entry.date imgSource=entry.img ident=entry.ident action="notifyController"}}
   {{/music-entry}} 
 {{/each}}
+{{/liquid-spacer}}
 
-{{infinity-loader infinityModel=model}}
+{{#infinity-loader infinityModel=model destroyOnInfinity=true}}
+  <div class="arrow-container">
+    <i class="fa fa-arrow-down fa-1x" artia-hidden="true"></i>
+  </div>
+{{/infinity-loader}}
