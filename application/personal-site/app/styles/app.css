@@ -336,6 +336,8 @@ body {
   .song-entry hr {
     width: 100%; }
   .song-entry .song-entry-title {
+    margin-left: 20px;
+    margin-right: 20px;
     font-family: 'Playfair Display', serif;
     font-weight: bold;
     color: #C06C84;

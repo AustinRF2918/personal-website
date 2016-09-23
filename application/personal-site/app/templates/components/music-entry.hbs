@@ -1,6 +1,6 @@
 {{#liquid-if isShowing class="showing-content full-width"}}
-  <div style="width: 100% !important;"class="left-half"><a class="song-entry-title" href="#">
-    <h3 class="song-entry-title">{{this.title}}</h3></a>
+  <div style="width: 100% !important;"class="left-half">
+    <a href="#"><h3 class="song-entry-title">{{this.title}}</h3></a>
     <h4 class="song-entry-genre">{{this.genre}}</h4>
     <h5 class="song-entry-date">{{this.date}}</h5>
   </div>
@@ -17,17 +17,13 @@
 {{/liquid-if}}
 {{#liquid-if isNotShowing class="hiding-content full-width"}}
 <div class="flex-box">
-    <div class="left-half "><a class="song-entry-title" href="#">
-        <h3 class="song-entry-title">{{this.title}}</h3></a>
+  <div class="left-half ">
+        <a href="#"><h3 class="song-entry-title">{{this.title}}</h3></a>
         <h4 class="song-entry-genre">{{this.genre}}</h4>
         <h5 class="song-entry-date">{{this.date}}</h5>
     </div>
     <div class="right-half">
-        <div class="image-container">
-            <div class="image-subcontainer" style="background-image: url({{this.imgSource}})">
-                <div class="image-overlay"><span {{action 'togglePlayer'}} class="image-icon"><a href="#"><i class="fa fa-play" aria-hidden="true"></i></a></span></div>
-            </div>
-        </div>
+        {{clickable-image imgSrc=this.imgSource action='togglePlayer'}}
     </div>
 </div>
 {{/liquid-if}}
