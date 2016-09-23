@@ -1,11 +1,7 @@
 <div class="web-entry">
     <div class="centerable-half"><a class="web-entry-title" href="#">
         <h3 class="web-entry-title">{{title}}</h3></a>
-        <div class="image-container">
-            <div class="image-subcontainer">
-                <div class="image-overlay"><span class="image-icon"><a href="#"><i class="fa fa-play" aria-hidden="true"></i></a></span></div>
-            </div>
-        </div>
+        {{clickable-image imgSrc=this.imgSource action='toWebEntry'}}
         <h5 class="web-entry-genre">{{genre}}</h5>
         <h5 class="web-entry-date">{{date}}</h5>
     </div>

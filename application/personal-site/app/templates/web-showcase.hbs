@@ -6,7 +6,7 @@
 
 {{#liquid-spacer class="cool-scroll" growWidth=false growDuration=550}}
 {{#each model as |entry|}}
-  {{#web-entry title=entry.title genre=entry.genre date=entry.date}}
+  {{#web-entry imgSource=entry.img title=entry.title genre=entry.genre date=entry.date}}
   {{/web-entry}} 
 {{/each}}
 {{/liquid-spacer}}
