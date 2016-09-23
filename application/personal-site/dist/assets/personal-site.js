@@ -2432,11 +2432,11 @@ define("personal-site/templates/components/music-entry", ["exports"], function (
           "loc": {
             "source": null,
             "start": {
-              "line": 19,
+              "line": 18,
               "column": 0
             },
             "end": {
-              "line": 32,
+              "line": 33,
               "column": 0
             }
           },
@@ -2450,14 +2450,14 @@ define("personal-site/templates/components/music-entry", ["exports"], function (
           var el0 = dom.createDocumentFragment();
           var el1 = dom.createElement("div");
           dom.setAttribute(el1, "class", "flex-box");
-          var el2 = dom.createTextNode("\n");
+          var el2 = dom.createTextNode("\n    ");
           dom.appendChild(el1, el2);
           var el2 = dom.createElement("div");
           dom.setAttribute(el2, "class", "left-half ");
           var el3 = dom.createElement("a");
           dom.setAttribute(el3, "class", "song-entry-title");
           dom.setAttribute(el3, "href", "#");
-          var el4 = dom.createTextNode("\n    ");
+          var el4 = dom.createTextNode("\n        ");
           dom.appendChild(el3, el4);
           var el4 = dom.createElement("h3");
           dom.setAttribute(el4, "class", "song-entry-title");
@@ -2465,51 +2465,57 @@ define("personal-site/templates/components/music-entry", ["exports"], function (
           dom.appendChild(el4, el5);
           dom.appendChild(el3, el4);
           dom.appendChild(el2, el3);
-          var el3 = dom.createTextNode("\n    ");
+          var el3 = dom.createTextNode("\n        ");
           dom.appendChild(el2, el3);
           var el3 = dom.createElement("h4");
           dom.setAttribute(el3, "class", "song-entry-genre");
           var el4 = dom.createComment("");
           dom.appendChild(el3, el4);
           dom.appendChild(el2, el3);
-          var el3 = dom.createTextNode("\n    ");
+          var el3 = dom.createTextNode("\n        ");
           dom.appendChild(el2, el3);
           var el3 = dom.createElement("h5");
           dom.setAttribute(el3, "class", "song-entry-date");
           var el4 = dom.createComment("");
           dom.appendChild(el3, el4);
           dom.appendChild(el2, el3);
-          var el3 = dom.createTextNode("\n");
+          var el3 = dom.createTextNode("\n    ");
           dom.appendChild(el2, el3);
           dom.appendChild(el1, el2);
-          var el2 = dom.createTextNode("\n");
+          var el2 = dom.createTextNode("\n    ");
           dom.appendChild(el1, el2);
           var el2 = dom.createElement("div");
           dom.setAttribute(el2, "class", "right-half");
-          var el3 = dom.createTextNode("\n    ");
+          var el3 = dom.createTextNode("\n        ");
           dom.appendChild(el2, el3);
           var el3 = dom.createElement("div");
-          dom.setAttribute(el3, "class", "song-entry-box");
-          var el4 = dom.createTextNode("\n    ");
+          dom.setAttribute(el3, "class", "image-container");
+          var el4 = dom.createTextNode("\n            ");
           dom.appendChild(el3, el4);
           var el4 = dom.createElement("div");
-          dom.setAttribute(el4, "class", "song-entry-overlay");
-          dom.setAttribute(el4, "href", "#");
-          var el5 = dom.createElement("span");
-          dom.setAttribute(el5, "class", "song-entry-icon");
-          var el6 = dom.createElement("a");
-          dom.setAttribute(el6, "href", "#");
-          var el7 = dom.createElement("i");
-          dom.setAttribute(el7, "class", "fa fa-play");
-          dom.setAttribute(el7, "aria-hidden", "true");
+          dom.setAttribute(el4, "class", "image-subcontainer");
+          var el5 = dom.createTextNode("\n                ");
+          dom.appendChild(el4, el5);
+          var el5 = dom.createElement("div");
+          dom.setAttribute(el5, "class", "image-overlay");
+          var el6 = dom.createElement("span");
+          dom.setAttribute(el6, "class", "image-icon");
+          var el7 = dom.createElement("a");
+          dom.setAttribute(el7, "href", "#");
+          var el8 = dom.createElement("i");
+          dom.setAttribute(el8, "class", "fa fa-play");
+          dom.setAttribute(el8, "aria-hidden", "true");
+          dom.appendChild(el7, el8);
           dom.appendChild(el6, el7);
           dom.appendChild(el5, el6);
           dom.appendChild(el4, el5);
+          var el5 = dom.createTextNode("\n            ");
+          dom.appendChild(el4, el5);
           dom.appendChild(el3, el4);
-          var el4 = dom.createTextNode("\n    ");
+          var el4 = dom.createTextNode("\n        ");
           dom.appendChild(el3, el4);
           dom.appendChild(el2, el3);
-          var el3 = dom.createTextNode("\n");
+          var el3 = dom.createTextNode("\n    ");
           dom.appendChild(el2, el3);
           dom.appendChild(el1, el2);
           var el2 = dom.createTextNode("\n");
@@ -2522,8 +2528,8 @@ define("personal-site/templates/components/music-entry", ["exports"], function (
         buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
           var element0 = dom.childAt(fragment, [0]);
           var element1 = dom.childAt(element0, [1]);
-          var element2 = dom.childAt(element0, [3, 1]);
-          var element3 = dom.childAt(element2, [1, 0, 0]);
+          var element2 = dom.childAt(element0, [3, 1, 1]);
+          var element3 = dom.childAt(element2, [1, 0]);
           var morphs = new Array(5);
           morphs[0] = dom.createMorphAt(dom.childAt(element1, [0, 1]), 0, 0);
           morphs[1] = dom.createMorphAt(dom.childAt(element1, [2]), 0, 0);
@@ -2532,7 +2538,7 @@ define("personal-site/templates/components/music-entry", ["exports"], function (
           morphs[4] = dom.createElementMorph(element3);
           return morphs;
         },
-        statements: [["content", "this.title", ["loc", [null, [22, 33], [22, 47]]], 0, 0, 0, 0], ["content", "this.genre", ["loc", [null, [23, 33], [23, 47]]], 0, 0, 0, 0], ["content", "this.date", ["loc", [null, [24, 32], [24, 45]]], 0, 0, 0, 0], ["attribute", "style", ["concat", ["background-image: url(", ["get", "this.imgSource", ["loc", [null, [27, 40], [27, 54]]], 0, 0, 0, 0], ")"], 0, 0, 0, 0, 0], 0, 0, 0, 0], ["element", "action", ["togglePlayer"], [], ["loc", [null, [28, 78], [28, 103]]], 0, 0]],
+        statements: [["content", "this.title", ["loc", [null, [21, 37], [21, 51]]], 0, 0, 0, 0], ["content", "this.genre", ["loc", [null, [22, 37], [22, 51]]], 0, 0, 0, 0], ["content", "this.date", ["loc", [null, [23, 36], [23, 49]]], 0, 0, 0, 0], ["attribute", "style", ["concat", ["background-image: url(", ["get", "this.imgSource", ["loc", [null, [27, 75], [27, 89]]], 0, 0, 0, 0], ")"], 0, 0, 0, 0, 0], 0, 0, 0, 0], ["element", "action", ["togglePlayer"], [], ["loc", [null, [28, 49], [28, 74]]], 0, 0]],
         locals: [],
         templates: []
       };
@@ -2547,7 +2553,7 @@ define("personal-site/templates/components/music-entry", ["exports"], function (
             "column": 0
           },
           "end": {
-            "line": 34,
+            "line": 35,
             "column": 0
           }
         },
@@ -2561,8 +2567,6 @@ define("personal-site/templates/components/music-entry", ["exports"], function (
         var el0 = dom.createDocumentFragment();
         var el1 = dom.createComment("");
         dom.appendChild(el0, el1);
-        var el1 = dom.createTextNode("\n");
-        dom.appendChild(el0, el1);
         var el1 = dom.createComment("");
         dom.appendChild(el0, el1);
         var el1 = dom.createElement("hr");
@@ -2575,11 +2579,11 @@ define("personal-site/templates/components/music-entry", ["exports"], function (
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
         var morphs = new Array(2);
         morphs[0] = dom.createMorphAt(fragment, 0, 0, contextualElement);
-        morphs[1] = dom.createMorphAt(fragment, 2, 2, contextualElement);
+        morphs[1] = dom.createMorphAt(fragment, 1, 1, contextualElement);
         dom.insertBoundary(fragment, 0);
         return morphs;
       },
-      statements: [["block", "liquid-if", [["get", "isShowing", ["loc", [null, [1, 13], [1, 22]]], 0, 0, 0, 0]], ["class", "showing-content full-width"], 0, null, ["loc", [null, [1, 0], [17, 14]]]], ["block", "liquid-if", [["get", "isNotShowing", ["loc", [null, [19, 13], [19, 25]]], 0, 0, 0, 0]], ["class", "hiding-content full-width"], 1, null, ["loc", [null, [19, 0], [32, 14]]]]],
+      statements: [["block", "liquid-if", [["get", "isShowing", ["loc", [null, [1, 13], [1, 22]]], 0, 0, 0, 0]], ["class", "showing-content full-width"], 0, null, ["loc", [null, [1, 0], [17, 14]]]], ["block", "liquid-if", [["get", "isNotShowing", ["loc", [null, [18, 13], [18, 25]]], 0, 0, 0, 0]], ["class", "hiding-content full-width"], 1, null, ["loc", [null, [18, 0], [33, 14]]]]],
       locals: [],
       templates: [child0, child1]
     };
@@ -3784,7 +3788,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("personal-site/app")["default"].create({"name":"personal-site","version":"0.0.0+57d3debf"});
+  require("personal-site/app")["default"].create({"name":"personal-site","version":"0.0.0+dbe4e253"});
 }
 
 /* jshint ignore:end */
